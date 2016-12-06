@@ -19,6 +19,9 @@ gem 'httparty'
 gem 'foreman'
 gem 'puma'
 
+# Rack Middleware
+gem 'rack-ssl-enforcer'
+
 # Modules
 gem 'pygments.rb'
 gem 'redcarpet'

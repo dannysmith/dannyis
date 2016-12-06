@@ -7,6 +7,18 @@ module DannyIs
 
     # -------------------------- CONFIG ------------------------- #
 
+    configure do
+      # Use SSL Enforcer
+      use Rack::SslEnforcer, :only_hosts => ENV['BASE_DOMAIN']
+      set :session_secret, 'asdfa2342923422f1adc05c837fa234230e3594b93824b00e930ab0fb94b'
+
+      #Enable sinatra sessions
+      use Rack::Session::Cookie, :key => '_rack_session',
+                                 :path => '/',
+                                 :expire_after => 2592000, # In seconds
+                                 :secret => settings.session_secret
+    end
+
     configure :development do
       require 'better_errors'
       use BetterErrors::Middleware
@@ -18,18 +30,6 @@ module DannyIs
     end
 
     before do
-      puts
-      puts '--------------------------'
-      puts headers['x-forwarded-proto']
-      puts '--------------------------'
-      puts
-      # if ENV['RACK_ENV'] == 'production'
-      #   unless request.secure?
-      #     puts "Redirecting to HTTPS: #{request.url.sub('http', 'https')}"
-      #     redirect request.url.sub('http', 'https'), 301
-      #   end
-      # end
-
       # Switch on Caching
       cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
     end

@@ -55,6 +55,7 @@ GEM
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
+    rack-ssl-enforcer (0.2.9)
     rack-test (0.6.3)
       rack (>= 1.0)
     rainbow (2.1.0)
@@ -125,6 +126,7 @@ DEPENDENCIES
   pry
   puma
   pygments.rb
+  rack-ssl-enforcer
   rb-readline
   redcarpet
   rerun

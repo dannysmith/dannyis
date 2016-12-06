@@ -4,9 +4,7 @@ require 'bundler/setup'
 require 'dotenv'
 require 'sinatra/base'
 require 'sinatra/content_for'
-require 'net/http'
-require 'yaml'
-require 'redcarpet'
+require 'rack/ssl-enforcer'
 
 Dotenv.load
 Dir[File.dirname(__FILE__) + '/lib/*'].each { |f| require f }
