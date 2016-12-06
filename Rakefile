@@ -4,7 +4,6 @@
 require 'rake'
 require 'dotenv/tasks'
 require 'dotenv-heroku/tasks'
-require 'rspec/core/rake_task'
 
 namespace :scss do
   task :watch do
