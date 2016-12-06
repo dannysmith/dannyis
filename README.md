@@ -1,5 +1,7 @@
 # danny.is
 
+[![CircleCI](https://circleci.com/gh/dannysmith/dannyis.svg?style=svg)](https://circleci.com/gh/dannysmith/dannyis)
+
 ### To Run
 
 ```shell
