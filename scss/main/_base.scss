@@ -1,0 +1,43 @@
+// ==========================================================================
+// Base styles: Defaults and Overrides
+// ==========================================================================
+
+// Set box-sizing.
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $tf_body;
+  background: $cream;
+}
+
+// Remove the gap between audio, canvas, iframes,
+// images, videos and the bottom of their containers:
+// https://github.com/h5bp/html5-boilerplate/issues/440
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+//Remove default fieldset styles.
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+// Allow only vertical resizing of textareas.
+textarea {
+  resize: vertical;
+}

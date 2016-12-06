@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= yield_content :title %></title>
+    <meta name="title" content="<%= yield_content :title %>">
+
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1">
+    <meta name="description" content="Teacher. Engineer. People Geek. Blues Musician. Rubyist. Used to design things, now I teach others how to build them better. London, UK">
+    <meta name="author" content="Danny Smith">
+    <meta name="robots" content="index, follow">
+    <meta property="profile:first_name" content="Danny">
+    <meta property="profile:last_name" content="Smith">
+    <meta property="profile:username" content="dannysmith">
+    <link rel="me" href="http://twitter.com/dannysmith">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="/css/main/main.css">
+    <%= yield_content :styles %>
+    <link rel="stylesheet" href="/css/main/overrides.css">
+
+    <!-- RSS -->
+    <link id="mediumFeedLink" rel="alternate" type="application/rss+xml" title="Medium SS" href="https://medium.com/feed/@dannysmith">
+
+    <!-- Facebook -->
+    <meta property="og:site_name" content="danny.is/writing">
+    <meta property="og:title" content="<%= yield_content :title %>">
+    <!-- <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="fb:app_id" content=""> -->
+    <meta property="og:description" content="Teacher. Engineer. People Geek. Blues Musician. Rubyist. Used to design things, now I teach others how to build them better. London, UK">
+
+    <!-- Twitter -->
+    <!-- <meta property="twitter:description" content="Teacher. Engineer. People Geek. Blues Musician. Rubyist. Used to design things, now I teach others how to build them better. London, UK">
+    <meta name="twitter:site" content="@dannysmith">
+    <meta name="twitter:image:src" content=""> -->
+
+    <!-- Google Plus -->
+    <!-- <link rel="publisher" href=""> -->
+
+    <!-- TypeKit Scripts -->
+    <script src="https://use.typekit.net/zce3zqj.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  </head>
+  <body>
+  <main class="wrapper">
+    <%= yield  %>
+  </main>
+
+  <!-- Scripts -->
+  <script src="/js/main.js"></script>
+  <script src="https://use.fonticons.com/33185e6a.js"></script>
+
+  </body>
+</html>

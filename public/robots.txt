@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Danny Smith -- Developer -- @dannysmith
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Normalize.css
+    Sinatra
+    Redcarpet
+    OSX, vim, Atom
