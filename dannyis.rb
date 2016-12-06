@@ -9,14 +9,14 @@ module DannyIs
 
     configure do
       # Use SSL Enforcer
-      use Rack::SslEnforcer, :only_hosts => ENV['BASE_DOMAIN']
+      use Rack::SslEnforcer, only_hosts: ENV['BASE_DOMAIN']
       set :session_secret, 'asdfa2342923422f1adc05c837fa234230e3594b93824b00e930ab0fb94b'
 
-      #Enable sinatra sessions
-      use Rack::Session::Cookie, :key => '_rack_session',
-                                 :path => '/',
-                                 :expire_after => 2592000, # In seconds
-                                 :secret => settings.session_secret
+      # Enable sinatra sessions
+      use Rack::Session::Cookie, key: '_rack_session',
+                                 path: '/',
+                                 expire_after: 2_592_000, # In seconds
+                                 secret: settings.session_secret
     end
 
     configure :development do
@@ -48,7 +48,6 @@ module DannyIs
 
     # -------------------------- Redirects ------------------------ #
 
-    # rubocop:disable BlockLength
     get(//) do
       path = request.path_info
       case path
