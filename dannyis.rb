@@ -18,6 +18,13 @@ module DannyIs
     end
 
     before do
+      # if ENV['RACK_ENV'] == 'production'
+      #   unless request.secure?
+      #     puts "Redirecting to HTTPS: #{request.url.sub('http', 'https')}"
+      #     redirect request.url.sub('http', 'https'), 301
+      #   end
+      # end
+
       # Switch on Caching
       cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
     end
