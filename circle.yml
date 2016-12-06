@@ -1,0 +1,10 @@
+dependencies:
+  bundler:
+    without: [development]
+test:
+  - bundle exec rake spec
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: dannyis
