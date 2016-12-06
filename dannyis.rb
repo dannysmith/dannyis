@@ -18,6 +18,11 @@ module DannyIs
     end
 
     before do
+      puts
+      puts '--------------------------'
+      puts headers['x-forwarded-proto']
+      puts '--------------------------'
+      puts
       # if ENV['RACK_ENV'] == 'production'
       #   unless request.secure?
       #     puts "Redirecting to HTTPS: #{request.url.sub('http', 'https')}"
@@ -47,21 +52,15 @@ module DannyIs
     get(//) do
       path = request.path_info
       case path
-      when %r{^/cv(?:/|\.pdf)?$}
-        puts 'Redirecting to CV'
-        redirect 'http://files.dasmith.co.uk/cv.pdf', 301
-      when %r{^\/files(.*)}
-        puts "Redirecting to http://files.dasmith.co.uk/files#{$1}"
-        redirect "http://files.dasmith.co.uk/files#{$1}", 301
       when %r{^\/instagraming\/?}
         puts 'Redirecting to instagram'
-        redirect 'http://instagram.com/dannysmith', 301
+        redirect 'https://instagram.com/dannysmith', 301
       when %r{^\/noting\/?}
         puts 'Redirecting to notes.danny.is'
         redirect 'http://notes.danny.is', 301
       when %r{^\/tweeting\/?}
         puts 'Redirecting to twitter'
-        redirect 'http://twitter.com/dannysmith', 301
+        redirect 'https://twitter.com/dannysmith', 301
       else
         puts "Trying redirect to CloudApp: #{path}"
         # Try a redirect to CloudApp
