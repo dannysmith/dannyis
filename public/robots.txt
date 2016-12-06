@@ -1,14 +1,5 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+# www.robotstxt.org/
 
-# TEAM
-
-    Danny Smith -- Developer -- @dannysmith
-
-# TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
-    Normalize.css
-    Sinatra
-    Redcarpet
-    OSX, vim, Atom
+# Allow crawling of all content
+User-agent: *
+Disallow:
