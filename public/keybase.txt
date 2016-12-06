@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/dannysmith
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://danny.is
+  * I am dannysmith (https://keybase.io/dannysmith) on keybase.
+  * I have a public key ASB_FEeOZ2yxn3SWBqriqsjirQ5uVhzq4Y0y5NUUXsUxRAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101452808d1b87f9d641a49035b268ddc2b9e71e260a3a28266483f7f47b4f6e0c00a",
+            "host": "keybase.io",
+            "kid": "01207f14478e676cb19f749606aae2aac8e2ad0e6e561ceae18d32e4d5145ec531440a",
+            "uid": "763d9d458e0590f5df33bc8d8f03db19",
+            "username": "dannysmith"
+        },
+        "service": {
+            "hostname": "danny.is",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1481065736,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1481065644,
+        "hash": "eaed2c28a3eebb4cf2c635c6b5de2e59f36ecb8e3541fd5929a55233cf22edd63e41b8749d02ebdb4a63be82edfcb8d844098b6f1b9a20a3183c5978c6e61f8f",
+        "seqno": 750524
+    },
+    "prev": "131a0c60619ae35d0cc6747b41d5a0b6eb40d44376be472a2ff0bdb76c9baaef",
+    "seqno": 24,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgfxRHjmdssZ90lgaq4qrI4q0OblYc6uGNMuTVFF7FMUQKp3BheWxvYWTFAvN7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxNDUyODA4ZDFiODdmOWQ2NDFhNDkwMzViMjY4ZGRjMmI5ZTcxZTI2MGEzYTI4MjY2NDgzZjdmNDdiNGY2ZTBjMDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwN2YxNDQ3OGU2NzZjYjE5Zjc0OTYwNmFhZTJhYWM4ZTJhZDBlNmU1NjFjZWFlMThkMzJlNGQ1MTQ1ZWM1MzE0NDBhIiwidWlkIjoiNzYzZDlkNDU4ZTA1OTBmNWRmMzNiYzhkOGYwM2RiMTkiLCJ1c2VybmFtZSI6ImRhbm55c21pdGgifSwic2VydmljZSI6eyJob3N0bmFtZSI6ImRhbm55LmlzIiwicHJvdG9jb2wiOiJodHRwczoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTgifSwiY3RpbWUiOjE0ODEwNjU3MzYsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ4MTA2NTY0NCwiaGFzaCI6ImVhZWQyYzI4YTNlZWJiNGNmMmM2MzVjNmI1ZGUyZTU5ZjM2ZWNiOGUzNTQxZmQ1OTI5YTU1MjMzY2YyMmVkZDYzZTQxYjg3NDlkMDJlYmRiNGE2M2JlODJlZGZjYjhkODQ0MDk4YjZmMWI5YTIwYTMxODNjNTk3OGM2ZTYxZjhmIiwic2Vxbm8iOjc1MDUyNH0sInByZXYiOiIxMzFhMGM2MDYxOWFlMzVkMGNjNjc0N2I0MWQ1YTBiNmViNDBkNDQzNzZiZTQ3MmEyZmYwYmRiNzZjOWJhYWVmIiwic2Vxbm8iOjI0LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQB6aAUWaUWyOYTOlGzOb6p0Nfoq5WMZr1IcwgW1tXZJjSRjEW9hXiKGuw2a27a2sE+JNU+pzpoLHueuVi/hAOweoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCCyZS0P7MWrW971LtXbZbncFo+6LCCEXhaVUeY+Tb07i6N0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dannysmith
+
+==================================================================
