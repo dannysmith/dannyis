@@ -1,0 +1,32 @@
+{
+  "name": "dannyis",
+  "description": "Personal website of Danny Smith",
+  "scripts": {},
+  "env": {
+    "BASE_DOMAIN": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "PUMA_WORKERS": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "newrelic"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
