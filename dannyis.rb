@@ -20,8 +20,6 @@ module DannyIs
 
       # Load Mongoid
       Mongoid.load!('mongoid.yml')
-
-      DummyThing.create! name: 'Danny Smith', detailed_description: 'Some cool thing'
     end
 
     configure :development do
