@@ -17,6 +17,11 @@ module DannyIs
                                  path: '/',
                                  expire_after: 2_592_000, # In seconds
                                  secret: settings.session_secret
+
+      # Load Mongoid
+      Mongoid.load!('mongoid.yml')
+
+      DummyThing.create! name: 'Danny Smith', detailed_description: 'Some cool thing'
     end
 
     configure :development do
@@ -38,6 +43,11 @@ module DannyIs
 
     get '/' do
       erb :home
+    end
+
+    get '/testdbread/?' do
+      content_type 'application/json'
+      return {total_records: DummyThing.count, last: DummyThing.last.attributes.except('_id')}.to_json
     end
 
     # ----------------------------- Blog --------------------------- #

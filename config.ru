@@ -5,6 +5,7 @@ require 'dotenv'
 require 'sinatra/base'
 require 'sinatra/content_for'
 require 'rack/ssl-enforcer'
+require 'mongoid'
 
 # Enable ruby garbage collection profiler, for New Relic
 GC::Profiler.enable

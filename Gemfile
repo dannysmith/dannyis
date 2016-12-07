@@ -14,6 +14,7 @@ gem 'sinatra-contrib'
 
 # Libs
 gem 'httparty'
+gem 'mongoid', '~> 6.0.0'
 
 # Server
 gem 'foreman'
