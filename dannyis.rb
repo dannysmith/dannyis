@@ -45,11 +45,6 @@ module DannyIs
       erb :home
     end
 
-    get '/testdbread/?' do
-      content_type 'application/json'
-      return {total_records: DummyThing.count, last: DummyThing.last.attributes.except('_id')}.to_json
-    end
-
     # ----------------------------- Blog --------------------------- #
 
     # -------------------------- RSS Feeds ------------------------ #

@@ -1,5 +1,5 @@
 module DannyIs
-  # Dummy objects to demonstrate how MongoDB is hooked up
+  # Dummy objects to demonstrate that MongoDB is hooked up and working. All seems to be good.
   class DummyThing
     include ::Mongoid::Document
 
