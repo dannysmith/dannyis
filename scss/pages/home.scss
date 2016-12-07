@@ -30,3 +30,11 @@ a {
 a:hover {
   color: $red;
 }
+
+.copyright {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: rotate(90deg);
+  transform-origin: top right;
+}
