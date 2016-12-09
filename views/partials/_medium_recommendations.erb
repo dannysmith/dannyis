@@ -3,9 +3,8 @@
   <h3>Recommended on Medium</h3>
   <ul>
     <% @medium_recommendations.each do |rec| %>
-    <li><a href="<%= rec.url %>"><%= rec.title %></a></li>
+    <li><a href="<%= h rec.url %>"><%= h rec.title %></a></li>
     <% end %>
   </ul>
 </aside>
 <% end %>
-  
