@@ -69,12 +69,22 @@ module DannyIs
       erb :singing
     end
 
+    get '/reading/?' do
+      @pocket_links = DannyIs::PocketItem.all.order_by(recommended_at: :desc)
+      @medium_recommendations = DannyIs::MediumRecommendation.order_by(recommended_at: :desc)
+      # TODO: Merge the pocket links and the medium links into one big list, but display thnem differently
+      @links = @pocket_links
+      erb :reading
+    end
+
     # get '/pry' do
     #   binding.pry
     # end
 
     # ------------------------ Webhook Endpoints ---------------------- #
 
+    # Medium Recomendations
+    # ---------------------
     # Configure an IFTTT Recipe whhich POSTs the following JSON to this endpoint
     #   using the 'Make' channel.
     #   The key is an arbitry string, which must match the key contained in the
@@ -91,6 +101,38 @@ module DannyIs
       if data['key'] == ENV['IFTTT_POST_TOKEN']
         puts 'Recieved Recomendation from Medium'
         DannyIs::MediumRecommendation.create! title: data['postTitle'], recommended_at: data['recommendedAt'], url: data['postURL']
+        status 200
+      else
+        status 403
+      end
+    end
+
+    # Pocket Items
+    # ------------
+    # Configure an IFTTT Recipe whhich POSTs the following JSON to this endpoint
+    #   using the 'Make' channel.
+    #   The key is an arbitry string, which must match the key contained in the
+    #   IFTTT_POST_TOKEN env var.
+    #
+    # {
+    #   "key": "xxxxxx",
+    #   "title": "{{Title}}",
+    #   "url": "{{Url}}",
+    #   "excerpt": "{{Excerpt}}",
+    #   "tags": "{{Tags}}",
+    #   "imageURL": "{{ImageUrl}}",
+    #   "addedAt": "{{AddedAt}}"
+    # }
+    post '/webhooks/pocket-archive' do
+      data = JSON.parse request.body.read
+      if data['key'] == ENV['IFTTT_POST_TOKEN']
+        puts 'Recieved Archived Item from Pocket'
+        DannyIs::PocketItem.create! title: data['title'],
+                                    url: data['url'],
+                                    excerpt: data['excerpt'],
+                                    image_url: data['imageURL'],
+                                    tags: data['tags'],
+                                    added_at: data['addedAt']
         status 200
       else
         status 403
