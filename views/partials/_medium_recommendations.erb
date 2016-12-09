@@ -2,7 +2,9 @@
 <aside class='medium-recomendations'>
   <h3>Recommended on Medium</h3>
   <ul>
-    <li><%= @medium_recommendations.last.title %></li>
+    <% @medium_recommendations.each do |rec| %>
+    <li><%= rec.title %></li>
+    <% end %>
   </ul>
 </aside>
 <% end %>
