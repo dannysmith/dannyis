@@ -52,6 +52,11 @@ module DannyIs
       erb :home
     end
 
+    get '/writing' do
+      @articles = DannyIs::Medium::Request.new(username: 'dannysmith', image_size: 800, limit: 1000).posts
+      erb :writing
+    end
+
     # get '/pry' do
     #   binding.pry
     # end
@@ -88,29 +93,22 @@ module DannyIs
 
     # -------------------------- Redirects ------------------------ #
 
+    get '/noting/?' do
+      puts 'Redirecting to notes.danny.is'
+      redirect 'http://notes.danny.is', 301
+    end
+
     get(//) do
       path = request.path_info
-      case path
-      when %r{^\/instagraming\/?}
-        puts 'Redirecting to instagram'
-        redirect 'https://instagram.com/dannysmith', 301
-      when %r{^\/noting\/?}
-        puts 'Redirecting to notes.danny.is'
-        redirect 'http://notes.danny.is', 301
-      when %r{^\/tweeting\/?}
-        puts 'Redirecting to twitter'
-        redirect 'https://twitter.com/dannysmith', 301
+      puts "Trying redirect to CloudApp: #{path}"
+      # Try a redirect to CloudApp
+      if [200, 301].include? Net::HTTP.get_response('c.danny.is', path).code.to_i
+        puts 'Redirecting to CloudApp'
+        redirect "http://c.danny.is#{path}"
       else
-        puts "Trying redirect to CloudApp: #{path}"
-        # Try a redirect to CloudApp
-        if [200, 301].include? Net::HTTP.get_response('c.danny.is', path).code.to_i
-          puts 'Redirecting to CloudApp'
-          redirect "http://c.danny.is#{path}"
-        else
-          puts 'No CloudApp resource found'
-          status 404
-          erb :e404
-        end
+        puts 'No CloudApp resource found'
+        status 404
+        erb :e404
       end
     end
 

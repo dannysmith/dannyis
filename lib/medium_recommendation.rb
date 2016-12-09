@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DannyIs
   class MediumRecommendation
     include ::Mongoid::Document

@@ -1,0 +1,26 @@
+<% content_for :title do %>Writing - Danny Smith<% end %>
+<% content_for :styles do %>
+  <link rel="stylesheet" href="/css/pages/writing.css">
+<% end %>
+
+<h1>Writing</h1>
+<p>I write in medium.com</p>
+
+<% unless @articles.nil? || @articles.size < 1 %>
+<ul>
+<% @articles.each do |article| %>
+  <li class="article" id="<%= article[:id] %>"<% unless article[:image_url].nil? %>
+     style="
+     background-image:url(<%= article[:image_url] %>)"
+     <% end %>>
+     <a href="<%= article[:url] %>">
+       <h4><%= article[:title] %></h4>
+       <p>read on medium.com</p>
+     </a>
+   </li>
+<% end %>
+</ul>
+<% end %>
+
+
+<%= erb :'partials/_copyright' %>
