@@ -1,0 +1,10 @@
+<%- unless @medium_recommendations.nil? %>
+<aside class='medium-recomendations'>
+  <h3>Recommended on Medium</h3>
+  <ul>
+    <%- @medium_recommendations.each do |mr| %>
+    <li><a href="<%= mr.url %>"><%= mr.title %></a></li>
+    <%- end %>
+  </ul>
+</aside>
+<%- end %>

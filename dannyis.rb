@@ -35,12 +35,39 @@ module DannyIs
     before do
       # Switch on Caching
       cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
+
+      # Make medium reccomendations available in all views
+      @medium_recommendations = DannyIs::MediumRecommendation.all
     end
 
     # ------------------------ Site Pages ---------------------- #
 
     get '/' do
       erb :home
+    end
+
+    # ------------------------ Webhook Endpoints ---------------------- #
+
+    # Configure an IFTTT Recipe whhich POSTs the following JSON to this endpoint
+    #   using the 'Make' channel.
+    #   The key is an arbitry string, which must match the key contained in the
+    #   IFTTT_POST_TOKEN env var.
+    #
+    # {
+    #   "key": "xxxxxx",
+    #   "recommendedAt": "{{RecommendedAt}}",
+    #   "postURL": "{{PostUrl}}",
+    #   "postTitle": "{{PostTitle}}"
+    # }
+    post '/webhooks/medium-recommendation' do
+      data = JSON.parse request.body.read
+      if data['key'] == ENV['IFTTT_POST_TOKEN']
+        puts 'Recieved Recomendation from Medium'
+        DannyIs::MediumRecommendation.create! title: data['postTitle'], recommended_at: data['recommendedAt'], url: data['postURL']
+        status 200
+      else
+        status 403
+      end
     end
 
     # ----------------------------- Blog --------------------------- #
