@@ -5,6 +5,7 @@
 // Set box-sizing.
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 *,
@@ -15,7 +16,7 @@ html {
 
 body {
   font-family: $tf_body;
-  background: $cream;
+  background-color: $cream;
 }
 
 // Remove the gap between audio, canvas, iframes,

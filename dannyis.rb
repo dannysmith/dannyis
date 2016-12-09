@@ -52,9 +52,21 @@ module DannyIs
       erb :home
     end
 
-    get '/writing' do
+    get '/writing/?' do
       @articles = DannyIs::Medium::Request.new(username: 'dannysmith', image_size: 1200, limit: 1000).posts
       erb :writing
+    end
+
+    get '/singing/?' do
+      @videos = [
+        {title: 'Death Letter Blues', code: 'q3M-JhOybh4'},
+        {title: 'Grinning in Your Face', code: 'c1wWDMMq_nM'},
+        {title: 'Spiritual Song', code: 'x5-FUNYbjug'},
+        {title: 'Goin\' Down Slow', code: '31R4N3pmbmQ'},
+        {title: 'D-Day Blues', code: 'p9u_P4qVy_I'},
+        {title: 'Travelling Riverside Blues', code: 'uZxmML7vzHE'}
+      ]
+      erb :singing
     end
 
     # get '/pry' do

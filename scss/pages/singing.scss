@@ -1,0 +1,79 @@
+@import "../main/variables";
+// ==========================================================================
+// Styles specific to the singing page
+// ==========================================================================
+
+body {
+  // display: flex;
+  // flex-direction: column;
+  height: 100%;
+  background-image: url('/images/singing-bg-image.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  @media screen and (min-width: 600px) { // The size of the image.
+    background-size: 600px;
+  }
+}
+
+h1 {
+  font-size: 20vw;
+  margin-top: -.3em;
+  margin-bottom: 0;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 30rem) {
+    font-size: 24vh;
+    transform: rotate(90deg) translateX(-.9em) translateY(.3em);
+    transform-origin: bottom left;
+
+  }
+}
+
+ul {
+  display: inline-block;
+  padding: 1rem;
+}
+
+li {
+  text-transform: uppercase;
+  letter-spacing: .2ch;
+  list-style-type: none;
+  padding: .3em 0 .2em;
+  border-bottom: 5px solid $red;
+  background-color: transparentize($cream, .5);
+
+  @media screen and (min-width: 30rem) {
+    margin-left: 10rem;
+  }
+
+  a {
+    color: $black;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $red;
+  }
+}
+
+a {
+  color: $red;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p.intro {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 1rem;
+  @media screen and (min-width: 30rem) {
+    margin-left: 11rem;
+    background-color: transparentize($cream, .3);
+    max-width: 40rem;
+    border-bottom-right-radius: 30px;
+  }
+}
