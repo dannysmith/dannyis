@@ -4,23 +4,21 @@
 <% end %>
 
 <h1>Writing</h1>
-<p>I write in medium.com</p>
 
 <% unless @articles.nil? || @articles.size < 1 %>
-<ul>
+<ul class="article-list">
 <% @articles.each do |article| %>
-  <li class="article" id="<%= article[:id] %>"<% unless article[:image_url].nil? %>
-     style="
-     background-image:url(<%= article[:image_url] %>)"
-     <% end %>>
-     <a href="<%= article[:url] %>">
-       <h4><%= article[:title] %></h4>
-       <p>read on medium.com</p>
-     </a>
+  <li class="article" id="<%= article[:id] %>">
+     <div class="article-background" <% unless article[:image_url].nil? %>
+        style="
+        background-image:url(<%= article[:image_url] %>)"
+        <% end %>></div>
+      <a href="<%= article[:url] %>">
+        <h4><%= article[:title] %></h4>
+      </a>
    </li>
 <% end %>
 </ul>
+<% else %>
+<p class="fallback-text">I write at <a href="http://medium.com/@dannysmith">medium.com/@dannysmith</a>.</p>
 <% end %>
-
-
-<%= erb :'partials/_copyright' %>
