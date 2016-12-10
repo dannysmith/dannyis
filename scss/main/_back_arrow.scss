@@ -10,7 +10,14 @@
     top: 2rem;
     left: 2rem;
   }
-  
+
+  p { // For screen readers
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
+
   svg {
     width: 100%;
     height: 100%;
