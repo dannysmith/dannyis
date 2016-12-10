@@ -2,12 +2,16 @@
 
 module DannyIs
   class App < Sinatra::Base
-    use Rack::MethodOverride # Required for put delete etc
-    helpers Sinatra::ContentFor
 
     # -------------------------- CONFIG ------------------------- #
 
     configure do
+      # Required for put delete etc
+      use Rack::MethodOverride
+
+      # Enable ContentFor
+      helpers Sinatra::ContentFor
+
       # Use SSL Enforcer
       use Rack::SslEnforcer, only_hosts: ENV['BASE_DOMAIN']
       set :session_secret, 'asdfa2342923422f1adc05c837fa234230e3594b93824b00e930ab0fb94b'
@@ -29,8 +33,14 @@ module DannyIs
     end
 
     configure :production do
+      # Enable NewRelic
       require 'newrelic_rpm'
+
+      # Switch on Caching
+      cache_control :public, :must_revalidate, max_age: 60
     end
+
+    # -------------------------- HELPERS ------------------------- #
 
     helpers do
       def h(text)
@@ -38,15 +48,18 @@ module DannyIs
       end
     end
 
-    before do
-      # Switch on Caching
-      cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
+    # ------------------------ BEFORE HOOKS ----------------------- #
 
+    before do
       # Make medium reccomendations available in all views
       @medium_recommendations = DannyIs::MediumRecommendation.limit(8).order_by(recommended_at: :desc)
     end
 
-    # ------------------------ Site Pages ---------------------- #
+    # ======================================================= #
+    # ------------------------ Routes ----------------------- #
+    # ======================================================= #
+
+    # ------------------------ Site Pages ------------------- #
 
     get '/' do
       erb :home
@@ -72,14 +85,10 @@ module DannyIs
     get '/reading/?' do
       @pocket_links = DannyIs::PocketItem.all.order_by(recommended_at: :desc)
       @medium_recommendations = DannyIs::MediumRecommendation.order_by(recommended_at: :desc)
-      # TODO: Merge the pocket links and the medium links into one big list, but display thnem differently
+      # TODO: Merge the pocket links and the medium links into one big list, but display them differently
       @links = @pocket_links
       erb :reading
     end
-
-    # get '/pry' do
-    #   binding.pry
-    # end
 
     # ------------------------ Webhook Endpoints ---------------------- #
 

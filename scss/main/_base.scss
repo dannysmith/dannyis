@@ -1,11 +1,13 @@
 // ==========================================================================
-// Base styles: Defaults and Overrides
+// Base styles: Global Basics
 // ==========================================================================
 
-// Set box-sizing.
+// Base styles
 html {
   box-sizing: border-box;
   height: 100%;
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+  text-rendering: optimizeLegibility;
 }
 
 *,
@@ -15,9 +17,13 @@ html {
 }
 
 body {
-  font-family: $tf_body;
-  background-color: $cream;
+  font-family: $tf-body;
+  background-color: $body-background-color;
 }
+
+// ==========================================================================
+// Base styles: Resets (in addition to normalize.css)
+// ==========================================================================
 
 // Remove the gap between audio, canvas, iframes,
 // images, videos and the bottom of their containers:
@@ -43,8 +49,66 @@ textarea {
   resize: vertical;
 }
 
+// Universal heading rendering
+// Remove all margins from Headings
+h1,
+h2,
+h3,
+h4,
+h5 {
+  -webkit-font-feature-settings: "kern" 1;
+  margin: 0;
+}
+
+// ==========================================================================
+// Base styles: Inline Text Treatments
+// ==========================================================================
+
+// Marked Text
+mark {
+  background: $selection-color;
+}
+
+// Highlighting & Selection
+::-moz-selection {
+  background: $selection-color;
+  text-shadow: none;
+}
+
+::selection {
+  background: $selection-color;
+  text-shadow: none;
+}
+
+// ==========================================================================
+// Base styles: Default Links
+// ==========================================================================
+
+
+a {
+  color: $red;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+// ==========================================================================
+// Base styles: Global Type Styles
+// ==========================================================================
+
 // Copyright notice
 .copyright {
   font-size: .75rem;
   text-transform: uppercase;
+}
+
+// Intro Paragraph
+.intro {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 1rem;
 }

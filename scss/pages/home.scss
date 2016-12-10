@@ -6,30 +6,6 @@
 h1 {
   font-size: 17vw;
   margin-top: -.2em;
-  margin-bottom: 0;
-}
-
-ul {
-  display: inline-block;
-  padding: 1rem;
-}
-
-li {
-  text-transform: uppercase;
-  letter-spacing: .2ch;
-  list-style-type: none;
-  padding: .3em 0 .2em;
-  border-bottom: 5px solid $red;
-  background-color: transparentize($cream, .5);
-}
-
-a {
-  color: $black;
-  text-decoration: none;
-}
-
-a:hover {
-  color: $red;
 }
 
 .copyright {

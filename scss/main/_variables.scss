@@ -2,13 +2,18 @@
 // Global Variables
 // ==========================================================================
 
-// Colours
+// Basic Colours
 $black: #444;
 
-// $red: #da2924;
 $red: rgb(255, 30, 28);
 $cream: #f6f3ea;
+$yellow: #ffde59;
+$white: #fff;
+
+// Component Colours
+$body-background-color: $cream;
+$selection-color: $yellow;
 
 // Font Families
-$tf_body: "futura-pt", helvetica, sans-serif;
-$tf_code: "Inconsolata", monospace;
+$tf-body: "futura-pt", helvetica, sans-serif;
+$tf-code: "Inconsolata", monospace;
