@@ -35,9 +35,6 @@ module DannyIs
     configure :production do
       # Enable NewRelic
       require 'newrelic_rpm'
-
-      # Switch on Caching
-      cache_control :public, :must_revalidate, max_age: 60
     end
 
     # -------------------------- HELPERS ------------------------- #
@@ -51,6 +48,9 @@ module DannyIs
     # ------------------------ BEFORE HOOKS ----------------------- #
 
     before do
+      # Switch on Caching
+      cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
+
       # Make medium reccomendations available in all views
       @medium_recommendations = DannyIs::MediumRecommendation.limit(8).order_by(recommended_at: :desc)
     end
