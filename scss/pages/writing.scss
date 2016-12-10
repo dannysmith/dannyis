@@ -46,6 +46,10 @@ h1 {
     height: 30vw;
     color: inherit;
 
+    &:hover {
+      text-decoration: none;
+    }
+
     $text-shadow-color: rgba(0, 0, 0, .5);
 
     h4 {
