@@ -15,6 +15,16 @@ body {
   }
 }
 
+.back-arrow {
+  left: auto;
+  right: 1rem;
+
+  @media screen and (min-width: 30rem) {
+    left: 11rem;
+    right: auto;
+  }
+}
+
 h1 {
   font-size: 20vw;
   margin-top: -.3em;
