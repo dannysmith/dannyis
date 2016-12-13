@@ -7,15 +7,22 @@
 
 <h1>Reading</h1>
 
+<p class="intro">I read a lot of articles. Mostly tech, but not always. This list is updated whenever I recommend an article on <a href="https://medium.com/@dannysmith">Medium</a> or archive an article&nbsp;in&nbsp;<a href="https://getpocket.com/@dannysmith">Pocket</a>.</p>
+
 <% unless @links.nil? || @links.size < 1 %>
   <ul>
     <% @links.each do |link| %>
     <li>
-      <a href="<%= h link.url %>"><%= h link.title %></a>
       <% if link.is_a? DannyIs::MediumRecommendation %>
-        <span class="tag">medium</span>
+        <span class="link-medium">
+          <a href="<%= h link.url %>"><%= h link.title %></a>
+          <span class="tag">medium</span>
+        </span>
       <% else %>
-        <span class="tag">pocket</span>
+        <span class="link-pocket">
+          <a href="<%= h link.url %>"><%= h link.title %></a>
+          <span class="tag">pocket</span>
+        </span>
       <% end %>
     </li>
     <% end %>
