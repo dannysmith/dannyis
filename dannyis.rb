@@ -50,8 +50,10 @@ module DannyIs
     before do
       # Switch on Caching
       cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
+    end
 
-      # Make medium reccomendations available in all views
+    before /^(?!\/reading)/ do
+      # Make medium reccomendations available in all views except /reading (which handles it already)
       @medium_recommendations = DannyIs::MediumRecommendation.limit(8).order_by(recommended_at: :desc)
     end
 
@@ -85,8 +87,12 @@ module DannyIs
     get '/reading/?' do
       @pocket_links = DannyIs::PocketItem.all.order_by(recommended_at: :desc)
       @medium_recommendations = DannyIs::MediumRecommendation.order_by(recommended_at: :desc)
-      # TODO: Merge the pocket links and the medium links into one big list, but display them differently
-      @links = @pocket_links
+
+      # Cast collections into single array, then sort by recommended_at date.
+      @links = Array(@medium_recommendations) + Array(@pocket_links)
+      @links.sort! {|medium, pocket| pocket.recommended_at <=> medium.recommended_at}
+
+      # TODO: Add some sort of pagination or limiting here.
       erb :reading
     end
 
@@ -141,7 +147,7 @@ module DannyIs
                                     excerpt: data['excerpt'],
                                     image_url: data['imageURL'],
                                     tags: data['tags'],
-                                    added_at: data['addedAt']
+                                    recommended_at: data['addedAt']
         status 200
       else
         status 403

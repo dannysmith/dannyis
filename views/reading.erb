@@ -10,7 +10,14 @@
 <% unless @links.nil? || @links.size < 1 %>
   <ul>
     <% @links.each do |link| %>
-    <li><a href="<%= h link.url %>"><%= h link.title %></a></li>
+    <li>
+      <a href="<%= h link.url %>"><%= h link.title %></a>
+      <% if link.is_a? DannyIs::MediumRecommendation %>
+        <span class="tag">medium</span>
+      <% else %>
+        <span class="tag">pocket</span>
+      <% end %>
+    </li>
     <% end %>
   </ul>
 <% end %>

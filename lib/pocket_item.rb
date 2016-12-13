@@ -9,6 +9,6 @@ module DannyIs
     field :excerpt, type: String
     field :tags, type: String
     field :image_url, type: String
-    field :added_at, type: DateTime
+    field :recommended_at, type: DateTime
   end
 end
