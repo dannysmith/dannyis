@@ -1,8 +1,7 @@
 # frozen_string_literal: true
-
 module DannyIs
+  # rubocop:disable ClassLength
   class App < Sinatra::Base
-
     # -------------------------- CONFIG ------------------------- #
 
     configure do
@@ -52,7 +51,7 @@ module DannyIs
       cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
     end
 
-    before /^(?!\/reading)/ do
+    before(/^(?!\/reading)/) do
       # Make medium reccomendations available in all views except /reading (which handles it already)
       @medium_recommendations = DannyIs::MediumRecommendation.limit(8).order_by(recommended_at: :desc)
     end
@@ -74,12 +73,12 @@ module DannyIs
 
     get '/singing/?' do
       @videos = [
-        {title: 'Death Letter Blues', code: 'q3M-JhOybh4'},
-        {title: 'Grinning in Your Face', code: 'c1wWDMMq_nM'},
-        {title: 'Spiritual Song', code: 'x5-FUNYbjug'},
-        {title: 'Goin\' Down Slow', code: '31R4N3pmbmQ'},
-        {title: 'D-Day Blues', code: 'p9u_P4qVy_I'},
-        {title: 'Travelling Riverside Blues', code: 'uZxmML7vzHE'}
+        { title: 'Death Letter Blues', code: 'q3M-JhOybh4' },
+        { title: 'Grinning in Your Face', code: 'c1wWDMMq_nM' },
+        { title: 'Spiritual Song', code: 'x5-FUNYbjug' },
+        { title: 'Goin\' Down Slow', code: '31R4N3pmbmQ' },
+        { title: 'D-Day Blues', code: 'p9u_P4qVy_I' },
+        { title: 'Travelling Riverside Blues', code: 'uZxmML7vzHE' }
       ]
       erb :singing
     end
@@ -90,7 +89,7 @@ module DannyIs
 
       # Cast collections into single array, then sort by recommended_at date.
       @links = Array(@medium_recommendations) + Array(@pocket_links)
-      @links.sort! {|medium, pocket| pocket.recommended_at <=> medium.recommended_at}
+      @links.sort! { |medium, pocket| pocket.recommended_at <=> medium.recommended_at }
 
       # TODO: Add some sort of pagination or limiting here.
       erb :reading
