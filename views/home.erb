@@ -2,21 +2,22 @@
 <% content_for :styles do %>
   <link rel="stylesheet" href="/css/pages/home.css">
 <% end %>
+<div class="vcard" itemtype="http://schema.org/Person">
+  <h1 class="fn"><span itemprop="givenName">Danny</span> <span itemprop="familyName">Smith</span></h1>
 
-<h1>Danny Smith</h1>
-
-<ul class="display-list">
-  <li><a href="/writing"><strong>writing</strong></a></li>
-  <li><a href="/singing"><strong>singing</strong></a></li>
-  <li><a href="http://notes.danny.is"><strong>Notes</strong></a></li>
-  <li><a href="https://twitter.com/dannysmith"><strong>twitter</strong>/dannysmith</a></li>
-  <li><a href="https://github.com/dannysmith"><strong>github</strong>/dannysmith</a></li>
-  <li><a href="https://medium.com/@dannysmith"><strong>medium</strong>/dannysmith</a></li>
-  <li><a href="https://keybase.io/dannysmith"><strong>keybase</strong>.io/dannysmith</a></li>
-  <li><a href="https://www.linkedin.com/in/dannyasmith"><strong>linkedin</strong>/dannyasmith</a></li>
-  <li><a href="https://instagram.com/dannysmith"><strong>instagram</strong>/dannysmith</a></li>
-</ul>
-
+  <ul class="display-list">
+    <li><a href="/writing"><strong>writing</strong></a></li>
+    <li><a href="/singing"><strong>singing</strong></a></li>
+    <li><a class="url" rel="me" href="http://notes.danny.is"><strong>Notes</strong></a></li>
+    <li><a class="url" rel="me" href="https://twitter.com/dannysmith"><strong>twitter</strong>/dannysmith</a></li>
+    <li><a class="url" rel="me" href="https://github.com/dannysmith"><strong>github</strong>/dannysmith</a></li>
+    <li><a class="url" rel="me" href="https://medium.com/@dannysmith"><strong>medium</strong>/dannysmith</a></li>
+    <li><a class="url" rel="me" href="https://keybase.io/dannysmith"><strong>keybase</strong>.io/dannysmith</a></li>
+    <li><a class="url" rel="me" href="https://www.linkedin.com/in/dannyasmith"><strong>linkedin</strong>/dannyasmith</a></li>
+    <li><a class="url" rel="me" href="https://instagram.com/dannysmith"><strong>instagram</strong>/dannysmith</a></li>
+    <li><a class="email" itemprop="email" href="mailto:hi@danny.is"><strong>email</strong></a></li>
+  </ul>
+</div>
 
 <%= erb :'partials/_medium_recommendations' %>
 
