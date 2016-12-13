@@ -1,9 +1,16 @@
+# development:
+#   clients:
+#     default:
+#       database: mongoid
+#       hosts:
+#         - localhost:27017
+
 development:
   clients:
     default:
-      database: mongoid
-      hosts:
-        - localhost:27017
+     uri: <%= ENV['MONGODB_URI'] %>
+     options:
+       connect_timeout: 15
 
 production:
   clients:
