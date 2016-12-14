@@ -18,7 +18,7 @@ module DannyIs
       @posts = []
 
       # Get and Parse response
-      @response = JSON.parse(get_posts_via_cache(username, limit, ttl: 30))
+      @response = JSON.parse(get_posts_via_cache(username, limit, ttl: 1800))
 
       @response['payload']['references']['Post'].each do |id, value|
         post = {
