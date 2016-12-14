@@ -5,6 +5,7 @@
 ### To Run
 
 ```shell
+brew services start redis # Or set REDIS_URL to point to a remote redis instance.
 bundle install
 rackup config.ru --host 0.0.0.0 --port 8080
 rake scss:watch

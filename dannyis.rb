@@ -67,7 +67,7 @@ module DannyIs
     end
 
     get '/writing/?' do
-      @articles = DannyIs::Medium::Request.new(username: 'dannysmith', image_size: 1200, limit: 1000).posts
+      @articles = DannyIs::Medium.new(username: 'dannysmith', image_size: 1200, limit: 1000).posts
       erb :writing
     end
 
