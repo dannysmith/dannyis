@@ -166,6 +166,27 @@ module DannyIs
       redirect 'http://notes.danny.is', 301
     end
 
+    [
+      '/writing/a-simpler-responsive-grid-120605',
+      '/writing/what-is-good-design-130121',
+      '/writing/mod-email-subject-lines-with-applescript-osx-130628',
+      '/writing/new-job-new-website-131002',
+      '/writing/switching-from-rvm-to-rbenv-131008',
+      '/writing/sass-and-other-css-preprocessors-140301',
+      '/writing/a-pretty-readability-archive-with-ruby-and-css-140420',
+      '/writing/controlling-the-rag-with-redcarpet-140504',
+      '/writing/writing-testable-code-140505',
+      '/writing/replacing-bash-with-zsh-141226',
+      '/writing/blogging-with-evernote-and-ruby-141226',
+      '/writing/feedback-loops-150126',
+      '/writing/delivering-business-kanban-and-validated-learning-150314'
+    ].each do |path|
+      get "#{path}/?" do
+        puts "Redirecting to old site: #{path}"
+        redirect "http://v1.danny.is#{path}", 301
+      end
+    end
+
     get(//) do
       path = request.path_info
       puts "Trying redirect to CloudApp: #{path}"
