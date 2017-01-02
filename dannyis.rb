@@ -12,8 +12,8 @@ module DannyIs
       helpers Sinatra::ContentFor
 
       # Use SSL Enforcer
-      use Rack::SslEnforcer, only_hosts: ENV['BASE_DOMAIN']
-      set :session_secret, ENV['SESSION_SECRET']
+      use Rack::SslEnforcer, only_hosts: ENV.fetch('BASE_DOMAIN')
+      set :session_secret, ENV.fetch('SESSION_SECRET')
 
       # Enable sinatra sessions
       use Rack::Session::Cookie, key: '_rack_session',
