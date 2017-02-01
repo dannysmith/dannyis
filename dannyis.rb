@@ -71,6 +71,11 @@ module DannyIs
       erb :writing
     end
 
+    get '/highlighting/?' do
+      @highlights = DannyIs::Medium.new(username: 'dannysmith').highlights
+      erb :highlighting
+    end
+
     get '/singing/?' do
       @videos = [
         { title: 'Death Letter Blues', code: 'q3M-JhOybh4' },

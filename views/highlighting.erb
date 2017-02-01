@@ -1,0 +1,18 @@
+<% content_for :title do %>Highlights - Danny Smith<% end %>
+<% content_for :styles do %>
+  <link rel="stylesheet" href="/css/pages/highlighting.css">
+<% end %>
+
+<h1>Highlights</h1>
+
+<% unless @highlights.nil? || @highlights.size < 1 %>
+<ul class="highlights-list">
+<% @highlights.each do |highlight| %>
+  <li id="<%= highlight[:id] %>">
+      <a class="medium-highlight" href="<%= highlight[:url] %>"><%= highlight[:text] %></a>
+   </li>
+<% end %>
+</ul>
+<% else %>
+<p class="fallback-text">I write at <a href="http://medium.com/@dannysmith">medium.com/@dannysmith</a>.</p>
+<% end %>

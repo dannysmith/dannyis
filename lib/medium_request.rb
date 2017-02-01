@@ -4,7 +4,7 @@ module DannyIs
   require 'redis'
 
   class Medium
-    attr_reader :posts
+    attr_reader :posts, :highlights
 
     # Use Redis to cache repsonses from medium
     # Will connect to the redis instance that REDIS_URL is set to.
@@ -16,9 +16,11 @@ module DannyIs
     def initialize(username:, image_size: 800, limit: 1000)
       image_url = "https://cdn-images-1.medium.com/max/#{image_size}"
       @posts = []
+      @highlights = []
 
-      # Get and Parse response
-      @response = JSON.parse(get_posts_via_cache(username, limit, ttl: 1800))
+      # Posts
+
+      @response = JSON.parse(get_data_via_cache(username, path: 'latest', limit: limit, ttl: 1800))
 
       @response['payload']['references']['Post'].each do |id, value|
         post = {
@@ -34,22 +36,41 @@ module DannyIs
         end
         @posts << post
       end
+
+      # Highlights
+
+      @response = JSON.parse(get_data_via_cache(username, path: 'highlights', limit: limit, ttl: 1800))
+
+      @response['payload']['references']['Quote'].each do |id, value|
+        post_id = value['postId']
+        creator_id = @response['payload']['references']['Post'][post_id]['creatorId']
+        post_slug = @response['payload']['references']['Post'][post_id]['uniqueSlug']
+        user_url = 'https://medium.com/' + @response['payload']['references']['User'][creator_id]['username']
+        highlight = {
+          id: id,
+          post_id: post_id,
+          creator_id: creator_id,
+          text: value['paragraphs'][0]['text'],
+          url: "#{user_url}/#{post_slug}"
+        }
+        @highlights << highlight
+      end
     end
 
     private
 
-    def get_posts_via_cache(username, limit, ttl: 300)
+    def get_data_via_cache(username, path:, limit:, ttl: 300)
       # Get cached copy from redis, or make request and cache a copy
-      cached_copy = @@redis.get username
+      cached_copy = @@redis.get "#{username}-#{path}"
       if cached_copy
         return cached_copy
       else
-        response = HTTParty.get("https://medium.com/@#{username}/latest?limit=#{limit}", headers: { 'Accept': 'application/json' })
+        response = HTTParty.get("https://medium.com/@#{username}/#{path}?limit=#{limit}", headers: { 'Accept': 'application/json' })
         response = response.body[16..-1] # Strips weird characters Medium add on
 
         # Only set the record if it already exists (just for safety), and expire the record after 20 seconds.
-        puts "Caching Medium request for #{username} to Redis"
-        @@redis.set username, response, nx: true, ex: ttl
+        puts "Caching Medium request for #{username}/#{path} to Redis"
+        @@redis.set "#{username}-#{path}", response, nx: true, ex: ttl
         return response
       end
     end
