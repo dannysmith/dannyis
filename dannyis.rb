@@ -67,12 +67,12 @@ module DannyIs
     end
 
     get '/writing/?' do
-      @articles = DannyIs::Medium.new(username: 'dannysmith', image_size: 1200, limit: 1000).posts
+      @articles = DannyIs::Medium.new(username: 'dannysmith', image_size: 1200, article_limit: 1000).posts
       erb :writing
     end
 
     get '/highlighting/?' do
-      @highlights = DannyIs::Medium.new(username: 'dannysmith').highlights
+      @highlights = DannyIs::Medium.new(username: 'dannysmith', highlight_limit: 50).highlights
       erb :highlighting
     end
 

@@ -3,19 +3,47 @@
 // Styles specific to the highlighting page
 // ==========================================================================
 
+h1 {
+  font-size: 20vw;
+  margin-top: -.3em;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 30rem) {
+    font-size: 24vh;
+    transform: rotate(90deg) translateX(-.9em) translateY(.3em);
+    transform-origin: bottom left;
+  }
+}
+
 .highlights-list {
   list-style-type: none;
   padding: 2rem;
 
+  a:hover {
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 30rem) {
+    margin-left: 11rem;
+  }
+
+  @media screen and (min-width: 40rem) {
+  // display: flex;
+  }
+
   li {
-    font-size: 2em;
-    padding: .5em 1em;
+    font-size: 1rem;
+    padding: .5rem 1rem;
     background: white;
     text-align: center;
     margin:0 0 2rem 0;
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0,0,0,.04);
     border: 1px solid rgba(0,0,0,.09);
+
+    @media screen and (min-width: 40rem) {
+      font-size: 1.5rem;
+    }
   }
 }
 

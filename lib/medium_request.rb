@@ -13,14 +13,14 @@ module DannyIs
     # username = medium username
     # image_size = the image size to pull down (for article banner images)
     # limit = the number of articles to get
-    def initialize(username:, image_size: 800, limit: 1000)
+    def initialize(username:, image_size: 800, article_limit: 1000, highlight_limit: 50)
       image_url = "https://cdn-images-1.medium.com/max/#{image_size}"
       @posts = []
       @highlights = []
 
       # Posts
 
-      @response = JSON.parse(get_data_via_cache(username, path: 'latest', limit: limit, ttl: 1800))
+      @response = JSON.parse(get_data_via_cache(username, path: 'latest', limit: article_limit, ttl: 1800))
 
       @response['payload']['references']['Post'].each do |id, value|
         post = {
@@ -39,7 +39,7 @@ module DannyIs
 
       # Highlights
 
-      @response = JSON.parse(get_data_via_cache(username, path: 'highlights', limit: limit, ttl: 1800))
+      @response = JSON.parse(get_data_via_cache(username, path: 'highlights', limit: highlight_limit, ttl: 1800))
 
       @response['payload']['references']['Quote'].each do |id, value|
         post_id = value['postId']
