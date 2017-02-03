@@ -8,7 +8,7 @@ module DannyIs
 
     # Use Redis to cache repsonses from medium
     # Will connect to the redis instance that REDIS_URL is set to.
-    @@redis = Redis.new
+    @@redis = Redis.new timeout: 60
 
     # username = medium username
     # image_size = the image size to pull down (for article banner images)

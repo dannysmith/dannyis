@@ -4,25 +4,48 @@
 // ==========================================================================
 
 body {
-  height: 100%;
-  min-height: 100vh;
-  background-image: url('/images/singing-bg-image.png');
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: contain;
-  @media screen and (min-width: 600px) { // The size of the image.
-    background-size: 600px;
+  overflow: hidden;
+}
+
+.albumart-image {
+  display: none;
+  position: absolute;
+  right: -200px;
+  bottom: -130px;
+  transform: rotate(20deg);
+
+  @media screen and (min-width: 90rem) {
+    display: block;
   }
 }
+
+.box,
+.box::before {
+  background: black;
+  width: 2rem;
+  height: 100rem;
+  margin-left: 14rem;
+}
+
+.box {
+  @media screen and (max-width: 30rem) {
+    display: none;
+  }
+}
+
+.box::before {
+  content: " ";
+  position: relative;
+  display: block;
+  background: transparentize($red, .5);
+  z-index: -1;
+  transform: rotate(-45deg) translateX(50rem);
+}
+
 
 .back-arrow {
   left: auto;
   right: 1rem;
-
-  @media screen and (min-width: 30rem) {
-    left: 11rem;
-    right: auto;
-  }
 }
 
 h1 {
@@ -34,21 +57,31 @@ h1 {
     font-size: 24vh;
     transform: rotate(90deg) translateX(-.9em) translateY(.3em);
     transform-origin: bottom left;
-
   }
 }
 
 .intro {
+  text-align: center;
   @media screen and (min-width: 30rem) {
     margin-left: 11rem;
-    background-color: transparentize($body-background-color, .3);
-    max-width: 40rem;
-    border-bottom-right-radius: 30px;
+    text-align: right;
+  }
+
+  @media screen and (min-width: 50rem) {
+    width: 70%;
+    margin-right: 2rem;
+    margin-left: auto;
   }
 }
 
-.display-list li {
+.display-list {
+  width: 100%;
+  a {
+    display: block;
+    width: 100%;
+  }
+
   @media screen and (min-width: 30rem) {
-    margin-left: 10rem;
+    margin-left: 11rem;
   }
 }
