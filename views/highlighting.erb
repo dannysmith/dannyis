@@ -6,13 +6,13 @@
 <h1>Highlights</h1>
 
 <% unless @highlights.nil? || @highlights.size < 1 %>
-<ul class="highlights-list">
-<% @highlights.each do |highlight| %>
-  <li id="<%= highlight[:id] %>">
-      <a class="medium-highlight" href="<%= highlight[:url] %>"><%= highlight[:text] %></a>
-   </li>
-<% end %>
-</ul>
-<% else %>
-<p class="fallback-text">I write at <a href="http://medium.com/@dannysmith">medium.com/@dannysmith</a>.</p>
+<div class="highlights-container">
+  <ul class="highlights-list">
+  <% @highlights.each do |highlight| %>
+    <li id="<%= highlight[:id] %>" <% if (highlight[:word_count] > 50) %>class="long"<% end %>>
+        <a class="medium-highlight-link" href="<%= highlight[:url] %>"><%= highlight[:text] %></a>
+     </li>
+  <% end %>
+  </ul>
+</div>
 <% end %>

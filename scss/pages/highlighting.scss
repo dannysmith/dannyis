@@ -3,54 +3,92 @@
 // Styles specific to the highlighting page
 // ==========================================================================
 
+body, #wrapper {
+  overflow: hidden;
+  height: 100vh;
+}
+
 h1 {
-  font-size: 20vw;
+  font-size: 18vw;
   margin-top: -.3em;
   text-transform: uppercase;
 
   @media screen and (min-width: 30rem) {
-    font-size: 24vh;
+    font-size: 18vh;
     transform: rotate(90deg) translateX(-.9em) translateY(.3em);
     transform-origin: bottom left;
   }
 }
 
+.highlights-container {
+  padding: 2rem;
+  padding-top: 0;
+
+  @media screen and (min-width: 30rem) {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    left: 11vh;
+    overflow: scroll;
+  }
+}
+
+
+  @media screen and (min-width: 50rem) {
+    .highlights-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
 .highlights-list {
   list-style-type: none;
-  padding: 2rem;
+  padding: 0;
 
   a:hover {
     text-decoration: none;
-  }
 
-  @media screen and (min-width: 30rem) {
-    margin-left: 11rem;
-  }
-
-  @media screen and (min-width: 40rem) {
-  // display: flex;
+    .medium_markup {
+      background: rgba(97,255,160,.4);
+    }
   }
 
   li {
     font-size: 1rem;
-    padding: .5rem 1rem;
+    padding: 1rem;
     background: white;
     text-align: center;
     margin:0 0 2rem 0;
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0,0,0,.04);
     border: 1px solid rgba(0,0,0,.09);
+    display: flex;
+    align-items: center;
 
     @media screen and (min-width: 40rem) {
       font-size: 1.5rem;
+
+      &.long {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media screen and (min-width: 50rem) {
+      width: 49%;
+    }
+
+    @media screen and (min-width: 100rem) {
+      width: 32%;
     }
   }
 }
 
+.medium-highlight-link {
+  line-height: 1.5;
+  color: black;
+}
 
-
-.medium-highlight {
+.medium_markup {
   background: rgba(97,255,160,.1);
   color: black;
-  line-height: 1.5;
 }

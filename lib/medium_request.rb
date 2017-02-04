@@ -46,12 +46,20 @@ module DannyIs
         creator_id = @response['payload']['references']['Post'][post_id]['creatorId']
         post_slug = @response['payload']['references']['Post'][post_id]['uniqueSlug']
         user_url = 'https://medium.com/' + @response['payload']['references']['User'][creator_id]['username']
+
+        text = value['paragraphs'][0]['text']
+        word_count = text.split(' ').size
+
+        text.insert value['endOffset'], "</span>"
+        text.insert value['startOffset'], "<span class=\"medium_markup\">"
+
         highlight = {
           id: id,
           post_id: post_id,
           creator_id: creator_id,
-          text: value['paragraphs'][0]['text'],
-          url: "#{user_url}/#{post_slug}"
+          text: text,
+          url: "#{user_url}/#{post_slug}",
+          word_count: word_count
         }
         @highlights << highlight
       end
