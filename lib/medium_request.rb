@@ -68,17 +68,17 @@ module DannyIs
     private
 
     def get_data_via_cache(username, path:, limit:, ttl: 300)
-      # Get cached copy from redis, or make request and cache a copy
-      cached_copy = @@redis.get "#{username}-#{path}"
-      if cached_copy
-        return cached_copy
-      else
+      # # Get cached copy from redis, or make request and cache a copy
+      # cached_copy = @@redis.get "#{username}-#{path}"
+      # if cached_copy
+      #   return cached_copy
+      # else
         response = HTTParty.get("https://medium.com/@#{username}/#{path}?limit=#{limit}", headers: { 'Accept': 'application/json' })
         response = response.body[16..-1] # Strips weird characters Medium add on
 
         # Only set the record if it already exists (just for safety), and expire the record after 20 seconds.
-        puts "Caching Medium request for #{username}/#{path} to Redis"
-        @@redis.set "#{username}-#{path}", response, nx: true, ex: ttl
+        # puts "Caching Medium request for #{username}/#{path} to Redis"
+        # @@redis.set "#{username}-#{path}", response, nx: true, ex: ttl
         return response
       end
     end
