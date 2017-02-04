@@ -80,7 +80,7 @@ module DannyIs
         # puts "Caching Medium request for #{username}/#{path} to Redis"
         # @@redis.set "#{username}-#{path}", response, nx: true, ex: ttl
         return response
-      end
+      # end
     end
   end
 end
