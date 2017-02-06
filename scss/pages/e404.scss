@@ -2,3 +2,39 @@
 // ==========================================================================
 // Styles specific to the 404 error page
 // ==========================================================================
+
+h1 {
+  font-size: 40vw;
+  margin-top: -.2em;
+}
+
+h1::after {
+  display: block;
+  content: " ";
+  background: transparentize($red, .5);;
+  height: 4vw;
+  margin-top: -9.5vw;
+}
+
+h2 {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .3vw;
+  transform: rotate(90deg);
+  background: $yellow;
+  transform-origin: bottom right;
+  padding: .3vw .7vw;
+  font-size: 2vw;
+}
+
+p {
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: 100;
+  margin: 0 0 0 40vw;
+}
+
+.rotation-container {
+  position: relative;
+  transform: rotate(-45deg) translateY(10vh) translateX(-10vh);
+}
