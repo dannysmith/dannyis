@@ -1,2 +1,2 @@
-h1{font-size:17vw;margin-top:-.2em}.copyright{position:absolute;right:0;bottom:0;transform:rotate(90deg);transform-origin:top right}
+h1{position:relative;font-size:17vw;margin-top:-.2em;z-index:1}.copyright{position:absolute;right:0;bottom:0;transform:rotate(90deg);transform-origin:top right}@media screen and (min-width: 80rem){.medium-recomendations{transform:rotate(45deg) translateX(30vw) translateY(-40vw);width:60vw}.medium-recomendations::after{display:block;position:relative;z-index:-1;content:" ";background:rgba(255,30,28,0.5);height:1vw;width:300%;margin-left:-100vw}}
 /*# sourceMappingURL=home.css.map */
