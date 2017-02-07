@@ -5,12 +5,12 @@
 
 <%= erb :'partials/_back_arrow' %>
 
-<h1>Reading</h1>
+<h1 class="fadeInRight animated">Reading</h1>
 
 <p class="intro">I read a lot of articles. Mostly tech, but not always. This list is updated whenever I recommend an article on <a href="https://medium.com/@dannysmith">Medium</a> or archive an article&nbsp;in&nbsp;<a href="https://getpocket.com/@dannysmith">Pocket</a>.</p>
 
 <% unless @links.nil? || @links.size < 1 %>
-  <ul>
+  <ul class="fadeInLeft animated">
     <% @links.each do |link| %>
     <li>
       <% if link.is_a? DannyIs::MediumRecommendation %>
