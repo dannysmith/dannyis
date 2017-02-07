@@ -22,7 +22,7 @@ module DannyIs
                                  secret: settings.session_secret
 
       # Set TTL for cached medium objects
-      DannyIs::Medium.set cache_ttl: 60
+      DannyIs::Medium.set cache_ttl: 1800
 
       # Load Mongoid
       Mongoid.load!('mongoid.yml')
