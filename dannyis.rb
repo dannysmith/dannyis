@@ -21,6 +21,9 @@ module DannyIs
                                  expire_after: 2_592_000, # In seconds
                                  secret: settings.session_secret
 
+      # Set TTL for cached medium objects
+      DannyIs::Medium.set cache_ttl: 60
+
       # Load Mongoid
       Mongoid.load!('mongoid.yml')
     end
@@ -67,12 +70,12 @@ module DannyIs
     end
 
     get '/writing/?' do
-      @articles = DannyIs::Medium.new(username: 'dannysmith', image_size: 1200, article_limit: 1000).posts
+      @articles = DannyIs::Medium.posts(username: 'dannysmith', limit: 1000, image_size: 1200)
       erb :writing
     end
 
     get '/highlighting/?' do
-      @highlights = DannyIs::Medium.new(username: 'dannysmith', highlight_limit: 50).highlights
+      @highlights = DannyIs::Medium.highlights(username: 'dannysmith', limit: 30)
       erb :highlighting
     end
 
