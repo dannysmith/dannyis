@@ -174,6 +174,7 @@ module DannyIs
       redirect 'http://notes.danny.is', 301
     end
 
+    # Redirect to old article URLs.
     [
       '/writing/a-simpler-responsive-grid-120605',
       '/writing/what-is-good-design-130121',
