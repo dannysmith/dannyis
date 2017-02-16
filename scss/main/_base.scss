@@ -19,6 +19,7 @@ html {
 body {
   font-family: $tf-body;
   background-color: $body-background-color;
+  overflow-x: hidden;
 }
 
 // ==========================================================================
