@@ -4,7 +4,9 @@
 // ==========================================================================
 
 body {
+  position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .albumart-image {
