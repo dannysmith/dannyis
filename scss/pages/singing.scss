@@ -3,10 +3,12 @@
 // Styles specific to the singing page
 // ==========================================================================
 
-body {
+.wrapper {
   position: relative;
   overflow: hidden;
   height: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .albumart-image {
