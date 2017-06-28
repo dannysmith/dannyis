@@ -210,6 +210,10 @@ module DannyIs
       end
     end
 
+    get('/cv/?') do
+      redirect '/cv.pdf'
+    end
+
     not_found do
       status 404
       erb :e404
