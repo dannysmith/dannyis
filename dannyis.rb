@@ -54,12 +54,6 @@ module DannyIs
       cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
     end
 
-    before(/(?!\/reading)/) do
-      # Make medium reccomendations available in all views except /reading (which handles it already)
-      puts '-----------------'
-      @medium_recommendations = DannyIs::MediumRecommendation.limit(8).order_by(recommended_at: :desc)
-    end
-
     # ======================================================= #
     # ------------------------ Routes ----------------------- #
     # ======================================================= #
@@ -67,6 +61,7 @@ module DannyIs
     # ------------------------ Site Pages ------------------- #
 
     get '/' do
+      @medium_recommendations = DannyIs::MediumRecommendation.limit(8).order_by(recommended_at: :desc)
       erb :home
     end
 
@@ -161,12 +156,6 @@ module DannyIs
         status 403
       end
     end
-
-    # ----------------------------- Blog --------------------------- #
-
-    # -------------------------- RSS Feeds ------------------------ #
-
-    # ------------------------- JSON Routes ----------------------- #
 
     # -------------------------- Redirects ------------------------ #
 
