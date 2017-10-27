@@ -54,8 +54,9 @@ module DannyIs
       cache_control :public, :must_revalidate, max_age: 60 if ENV['RACK_ENV'] == 'production'
     end
 
-    before(/^(?!\/reading)/) do
+    before(/(?!\/reading)/) do
       # Make medium reccomendations available in all views except /reading (which handles it already)
+      puts '-----------------'
       @medium_recommendations = DannyIs::MediumRecommendation.limit(8).order_by(recommended_at: :desc)
     end
 
