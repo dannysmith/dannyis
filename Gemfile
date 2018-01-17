@@ -19,7 +19,7 @@ gem 'redis', '~>4.0'
 
 # Server
 gem 'foreman', '~>0.84'
-gem 'puma', '~>3.10'
+gem 'puma', '~>3.11'
 
 # Rack Middleware
 gem 'rack-ssl-enforcer', '~>0.2'

@@ -51,7 +51,7 @@ GEM
     pry (0.11.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    puma (3.10.0)
+    puma (3.11.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -124,7 +124,7 @@ DEPENDENCIES
   mongoid (~> 6.2)
   newrelic_rpm (~> 3.17)
   pry
-  puma (~> 3.10)
+  puma (~> 3.11)
   rack-ssl-enforcer (~> 0.2)
   rb-readline
   redis (~> 4.0)
