@@ -4,6 +4,7 @@ module DannyIs
   require 'redis'
 
   class Medium
+    MEDIUM_TAGS_TO_EXCLUDE = %w[Littlething littlething].freeze
     @@redis_cache_ttl = 1200
     @@redis = Redis.new timeout: 60
 
@@ -49,6 +50,11 @@ module DannyIs
         posts = []
         response = JSON.parse(call_api(username, 'latest', limit))
         response['payload']['references']['Post'].each do |id, value|
+
+          # Skip "little things" tags
+          tags = value['virtuals']['tags'].map{ |t| t['name'] }
+          next if (tags & MEDIUM_TAGS_TO_EXCLUDE).any?
+
           post = {
             id: id,
             title: value['title'],
