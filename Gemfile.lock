@@ -119,7 +119,7 @@ DEPENDENCIES
   dotenv (~> 2.2)
   dotenv-heroku (~> 0.0)
   foreman (~> 0.84)
-  httparty (~> 0.15)
+  httparty (~> 0.16)
   mongoid (~> 6.2)
   newrelic_rpm (~> 3.17)
   pry
