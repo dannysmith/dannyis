@@ -28,7 +28,7 @@ gem 'rack-ssl-enforcer', '~>0.2'
 gem 'sass', '~>3.5'
 
 group :production do
-  gem 'newrelic_rpm', '~>3.17'
+  gem 'newrelic_rpm', '~>5.1'
 end
 
 group :test do
