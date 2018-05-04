@@ -204,6 +204,10 @@ module DannyIs
       redirect '/cv.pdf'
     end
 
+    get('/cv-rafac/?') do
+      redirect '/cv-rafac.pdf'
+    end
+
     not_found do
       status 404
       erb :e404
