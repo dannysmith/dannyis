@@ -18,7 +18,7 @@ gem 'mongoid', '~>6.2'
 gem 'redis', '~>4.0'
 
 # Server
-gem 'foreman', '~>0.84'
+gem 'foreman', '~>0.85'
 gem 'puma', '~>3.10'
 
 # Rack Middleware
