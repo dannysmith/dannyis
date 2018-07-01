@@ -5,7 +5,7 @@ ruby '2.5.0'
 
 # Ops
 gem 'activesupport', '~>5.1'
-gem 'dotenv', '~>2.2'
+gem 'dotenv', '~>2.5'
 gem 'dotenv-heroku', '~>0.0'
 
 # Sinatra
