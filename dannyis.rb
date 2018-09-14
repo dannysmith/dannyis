@@ -77,12 +77,12 @@ module DannyIs
 
     get '/singing/?' do
       @videos = [
+        { title: 'D-Day Blues', code: 'p9u_P4qVy_I' },
+        { title: 'Travelling Riverside Blues', code: 'uZxmML7vzHE' },
         { title: 'Death Letter Blues', code: 'q3M-JhOybh4' },
         { title: 'Grinning in Your Face', code: 'c1wWDMMq_nM' },
         { title: 'Spiritual Song', code: 'x5-FUNYbjug' },
         { title: 'Goin\' Down Slow', code: '31R4N3pmbmQ' },
-        { title: 'D-Day Blues', code: 'p9u_P4qVy_I' },
-        { title: 'Travelling Riverside Blues', code: 'uZxmML7vzHE' }
       ]
       erb :singing
     end
