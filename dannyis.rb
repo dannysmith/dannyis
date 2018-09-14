@@ -164,6 +164,11 @@ module DannyIs
       redirect 'http://notes.danny.is', 301
     end
 
+    get '/using/?' do
+      puts 'Redirecting to Notion for /uses'
+      redirect 'https://notion.so/dannysmith/Danny-Uses-72544bdecd144ca5ab3864d92dcd119b', 301
+    end
+
     # Redirect to old article URLs.
     [
       '/writing/a-simpler-responsive-grid-120605',
