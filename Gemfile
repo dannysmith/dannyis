@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby '2.6.0'
 
 # Ops
-gem 'activesupport', '~>5.1'
+gem 'activesupport', '~>5.2'
 gem 'dotenv', '~>2.6'
 gem 'dotenv-heroku', '~>0.0'
 
