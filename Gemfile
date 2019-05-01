@@ -25,7 +25,7 @@ gem 'puma', '~>3.10'
 gem 'rack-ssl-enforcer', '~>0.2'
 
 # Modules
-gem 'sass', '~>3.5'
+gem 'sass', '~>3.7'
 
 group :production do
   gem 'newrelic_rpm', '~>5.6'
