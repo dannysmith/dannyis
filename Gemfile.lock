@@ -67,7 +67,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rb-readline (0.5.5)
-    redis (4.1.0)
+    redis (4.1.2)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -132,7 +132,7 @@ DEPENDENCIES
   puma (~> 3.10)
   rack-ssl-enforcer (~> 0.2)
   rb-readline
-  redis (~> 4.0)
+  redis (~> 4.1)
   rspec (~> 3.7)
   rubocop
   sass (~> 3.5)
