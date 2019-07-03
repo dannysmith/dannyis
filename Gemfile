@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby '2.6.0'
+ruby '2.6.3'
 
 # Ops
 gem 'activesupport', '~>5.1'
-gem 'dotenv', '~>2.6'
+gem 'dotenv', '~>2.7'
 gem 'dotenv-heroku', '~>0.0'
 
 # Sinatra
@@ -13,22 +13,22 @@ gem 'sinatra', '~>2.0'
 gem 'sinatra-contrib', '~>2.0'
 
 # Libs
-gem 'httparty', '~>0.15'
+gem 'httparty', '~>0.17'
 gem 'mongoid', '~>7.0'
-gem 'redis', '~>4.0'
+gem 'redis', '~>4.1'
 
 # Server
 gem 'foreman', '~>0.84'
-gem 'puma', '~>3.10'
+gem 'puma', '~>4.0'
 
 # Rack Middleware
 gem 'rack-ssl-enforcer', '~>0.2'
 
 # Modules
-gem 'sass', '~>3.5'
+gem 'sass', '~>3.7'
 
 group :production do
-  gem 'newrelic_rpm', '~>5.6'
+  gem 'newrelic_rpm', '~>6.5'
 end
 
 group :test do
