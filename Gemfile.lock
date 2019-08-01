@@ -49,6 +49,7 @@ GEM
     multi_xml (0.6.0)
     mustermann (1.0.3)
     newrelic_rpm (5.6.0.349)
+    nio4r (2.4.0)
     parallel (1.13.0)
     parser (2.6.0.0)
       ast (~> 2.4.0)
@@ -56,7 +57,8 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    puma (3.12.0)
+    puma (4.0.1)
+      nio4r (~> 2.0)
     rack (2.0.6)
     rack-protection (2.0.5)
       rack
@@ -129,7 +131,7 @@ DEPENDENCIES
   mongoid (~> 7.0)
   newrelic_rpm (~> 5.6)
   pry
-  puma (~> 3.10)
+  puma (~> 4.0)
   rack-ssl-enforcer (~> 0.2)
   rb-readline
   redis (~> 4.0)
