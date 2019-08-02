@@ -5,13 +5,6 @@ require 'rake'
 require 'dotenv/tasks'
 require 'dotenv-heroku/tasks'
 
-namespace :scss do
-  task :watch do
-    command = 'sass --watch scss:public/css --style compressed'
-    `#{command}`
-  end
-end
-
 # RSpec Tests
 # https://www.relishapp.com/rspec/rspec-core/docs/command-line/rake-task
 # rubocop:disable HandleExceptions
