@@ -24,8 +24,9 @@ gem 'puma', '~>4.0'
 # Rack Middleware
 gem 'rack-ssl-enforcer', '~>0.2'
 
-# Modules
-gem 'sass', '~>3.7'
+# Sass
+# See https://sass-lang.com/ruby-sass
+gem 'sassc', '~> 2.0'
 
 group :production do
   gem 'newrelic_rpm', '~>6.5'
