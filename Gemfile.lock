@@ -87,9 +87,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.1)
-    sassc (2.0.1)
+    sassc (2.2.0)
       ffi (~> 1.9)
-      rake
     sinatra (2.0.5)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -130,7 +129,7 @@ DEPENDENCIES
   redis (~> 4.1)
   rspec (~> 3.7)
   rubocop
-  sassc (~> 2.0)
+  sassc (~> 2.2)
   sinatra (~> 2.0)
   sinatra-contrib (~> 2.0)
 
