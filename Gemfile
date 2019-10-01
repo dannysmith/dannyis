@@ -26,7 +26,7 @@ gem 'rack-ssl-enforcer', '~>0.2'
 
 # Sass
 # See https://sass-lang.com/ruby-sass
-gem 'sassc', '~> 2.0'
+gem 'sassc', '~> 2.2'
 
 group :production do
   gem 'newrelic_rpm', '~>6.5'
