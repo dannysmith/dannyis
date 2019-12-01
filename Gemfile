@@ -33,7 +33,7 @@ group :production do
 end
 
 group :test do
-  gem 'rspec', '~>3.7'
+  gem 'rspec', '~>3.9'
 end
 
 # rubocop:disable OrderedGems
