@@ -13,7 +13,7 @@ gem 'sinatra', '~>2.0'
 gem 'sinatra-contrib', '~>2.0'
 
 # Libs
-gem 'httparty', '~>0.17'
+gem 'httparty', '~>0.18'
 gem 'mongoid', '~>7.0'
 gem 'redis', '~>4.1'
 
