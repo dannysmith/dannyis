@@ -169,6 +169,11 @@ module DannyIs
       redirect 'https://notion.so/dannysmith/Danny-Uses-72544bdecd144ca5ab3864d92dcd119b', 301
     end
 
+        get '/meeting/?' do
+      puts 'Redirecting to Notion for /meeting'
+      redirect 'https://www.notion.so/Book-a-Meeting-with-Danny-e39fc8def5514b67b559b2e5a51934ae', 301
+    end
+
     # Redirect to old article URLs.
     [
       '/writing/a-simpler-responsive-grid-120605',
