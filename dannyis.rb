@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module DannyIs
   # rubocop:disable ClassLength
   class App < Sinatra::Base
@@ -82,7 +83,7 @@ module DannyIs
         { title: 'Death Letter Blues', code: 'q3M-JhOybh4' },
         { title: 'Grinning in Your Face', code: 'c1wWDMMq_nM' },
         { title: 'Spiritual Song', code: 'x5-FUNYbjug' },
-        { title: 'Goin\' Down Slow', code: '31R4N3pmbmQ' },
+        { title: 'Goin\' Down Slow', code: '31R4N3pmbmQ' }
       ]
       erb :singing
     end
@@ -169,9 +170,14 @@ module DannyIs
       redirect 'https://notion.so/dannysmith/Danny-Uses-72544bdecd144ca5ab3864d92dcd119b', 301
     end
 
-        get '/meeting/?' do
+    get '/meeting/?' do
       puts 'Redirecting to Notion for /meeting'
       redirect 'https://www.notion.so/Book-a-Meeting-with-Danny-e39fc8def5514b67b559b2e5a51934ae', 301
+    end
+
+    get '/rtotd/?' do
+      puts 'Redirecting to Notion for /rtotd'
+      redirect 'https://www.notion.so/dannysmith/Remote-Working-Tips-821f025d73cb4d93a661abc93822fb14', 301
     end
 
     # Redirect to old article URLs.
