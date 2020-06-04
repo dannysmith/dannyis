@@ -180,6 +180,11 @@ module DannyIs
       redirect 'https://www.notion.so/dannysmith/Remote-Working-Tips-821f025d73cb4d93a661abc93822fb14', 301
     end
 
+    get '/remote/?' do
+      puts 'Redirecting to Notion for /remote'
+      redirect 'https://www.notion.so/dannysmith/Remote-Working-Tips-821f025d73cb4d93a661abc93822fb14', 301
+    end
+
     # Redirect to old article URLs.
     [
       '/writing/a-simpler-responsive-grid-120605',
