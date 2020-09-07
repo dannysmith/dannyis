@@ -185,7 +185,7 @@ module DannyIs
       redirect 'https://www.notion.so/dannysmith/Remote-Working-Tips-821f025d73cb4d93a661abc93822fb14', 301
     end
 
-    get '/`zoom`/?' do
+    get '/zoom/?' do
       puts 'Redirecting to Zoom link'
       redirect 'https://zoom.us/j/6117794962?pwd=UHk1Z1JPQ0ZIVjZXNWJaL3Rsc1J4Zz09', 301
     end
