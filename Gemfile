@@ -14,7 +14,7 @@ gem 'sinatra-contrib', '~>2.0'
 
 # Libs
 gem 'httparty', '~>0.17'
-gem 'mongoid', '~>7.0'
+gem 'mongoid', '~>7.2'
 gem 'redis', '~>4.1'
 
 # Server
