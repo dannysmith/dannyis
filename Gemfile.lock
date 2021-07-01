@@ -65,7 +65,7 @@ GEM
     rainbow (3.0.0)
     rake (12.3.3)
     rb-readline (0.5.5)
-    redis (4.1.2)
+    redis (4.3.1)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -127,7 +127,7 @@ DEPENDENCIES
   puma (~> 4.0)
   rack-ssl-enforcer (~> 0.2)
   rb-readline
-  redis (~> 4.1)
+  redis (~> 4.3)
   rspec (~> 3.7)
   rubocop
   sassc (~> 2.0)
